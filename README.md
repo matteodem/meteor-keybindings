@@ -1,7 +1,7 @@
 meteor-keybindings
 ==================
 
-A meteor package for awesome key handling / bindings, with some methods to make the stuff easier. It uses the underscore and jquery meteor packages together with the awesome [jwerty.js](https://github.com/keithamus/jwerty) for key bindings.
+A meteor package for awesome key handling / bindings, with some methods to make the stuff easier. It uses the [underscore](http://underscorejs.org/) and [jquery](http://jquery.com/) meteor packages together with the awesome [jwerty.js](https://github.com/keithamus/jwerty) for key bindings.
 
 How to install
 --------------
@@ -10,7 +10,7 @@ How to install
 mrt add keybindings
 ```
 
-You can bind easily bind keys with the **Meteor.Keybindings** as following
+You can easily bind keys with **Meteor.Keybindings**
 
 
 ```
