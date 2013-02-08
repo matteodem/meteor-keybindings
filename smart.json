@@ -1,0 +1,8 @@
+{
+  "name": "keybindings",
+  "description": "Keybinding package for meteor",
+  "homepage": "https://github.com/matteodem/meteor-keybindings",
+  "author": "Matteo De Micheli",
+  "version": "0.3.0",
+  "git": "https://github.com/matteodem/meteor-keybindings.git"
+}

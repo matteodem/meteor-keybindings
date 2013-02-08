@@ -1,0 +1,231 @@
+{
+    "project": {},
+    "files": {
+        "keybindings.js": {
+            "name": "keybindings.js",
+            "modules": {},
+            "classes": {
+                "Keybindings": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Keybindings": {
+            "name": "Keybindings",
+            "shortname": "Keybindings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "keybindings.js",
+            "line": 9,
+            "description": "This is the main class Keybindings. It has important properties like the\ndocument body and all the active bindings, together with awesome methods.\n\nThe keys in the _bindings object is seperated with a / because you need two\nkeys to get to that key, so you'll never get to bind a key with it\n(;, :, #... etc would also work).",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "keybindings.js",
+            "line": 21,
+            "description": "Contains informations of the document's body for\ndom manipulation (binding the keys)",
+            "itemtype": "property",
+            "name": "_body",
+            "type": "Node Element",
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 28,
+            "description": "A list with all the bindings active / used",
+            "itemtype": "property",
+            "name": "bindings",
+            "type": "Object",
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 36,
+            "description": "Adds a new binding to a key event",
+            "itemtype": "method",
+            "name": "addOne",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "Key which the function should be bound to",
+                    "type": "String"
+                },
+                {
+                    "name": "binding",
+                    "description": "Function which should be executed when\ncalling the event on the key",
+                    "type": "Function"
+                },
+                {
+                    "name": "context",
+                    "description": "CSS3 selector for active context of binding",
+                    "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "Event type for key",
+                    "type": "String"
+                }
+            ],
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 76,
+            "description": "Add multiple new bindings with one method",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "bindings",
+                    "description": "Object with key as keyboard key / value as function",
+                    "type": "Object"
+                },
+                {
+                    "name": "context",
+                    "description": "CSS3 selector for active context of binding",
+                    "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "Event type for key",
+                    "type": "String"
+                }
+            ],
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 93,
+            "description": "Check if the keys are binded to the document\nor if context and event given, for that",
+            "itemtype": "method",
+            "name": "isBinded",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "Key which needs to be checked",
+                    "type": "String"
+                },
+                {
+                    "name": "context",
+                    "description": "CSS3 selector for defining where the binding is active",
+                    "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "Event type for key",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the key is binded",
+                "type": "Boolean"
+            },
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 125,
+            "description": "Removes a binding to a key",
+            "itemtype": "method",
+            "name": "removeOne",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "Key which the function should be bound to",
+                    "type": "String"
+                },
+                {
+                    "name": "context",
+                    "description": "CSS3 selector for active context of binding",
+                    "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "Event type for key",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "If the key was really binded, successful deletion",
+                "type": "Boolean"
+            },
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 152,
+            "description": "Same like addOne / add, remove multiple bindings at once",
+            "itemtype": "method",
+            "name": "remove",
+            "params": [
+                {
+                    "name": "bindings",
+                    "description": "Object with value as the keyboard keys",
+                    "type": "Array"
+                },
+                {
+                    "name": "context",
+                    "description": "CSS3 selector for active context of binding",
+                    "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "Event type for key",
+                    "type": "String"
+                }
+            ],
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 170,
+            "description": "And to make removing all easier, a method for that",
+            "itemtype": "method",
+            "name": "removeAll",
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 183,
+            "description": "Replaces current binding with new binding,\nkeeps the context and event the same",
+            "itemtype": "method",
+            "name": "replace",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "Key which the function should be bound to",
+                    "type": "String"
+                },
+                {
+                    "name": "newBinding",
+                    "description": "Function which should be executed",
+                    "type": "Function"
+                },
+                {
+                    "name": "context",
+                    "description": "CSS3 selector for active context of binding",
+                    "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "Event type for key",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Succesful replacement",
+                "type": "Boolean"
+            },
+            "class": "Keybindings"
+        }
+    ],
+    "warnings": []
+}
