@@ -28,5 +28,5 @@ For more information on how you can specificy the keys, check the [jwerty README
 
 ####This is an early build (a lot of stuff not tested)! 
 
-There are Qunit tests and yuidocs, if you want to see more examples. This readme will be updated soon.
+Have a look at the Qunit tests and yuidocs, if you want to see more examples. This readme will be updated soon.
 
