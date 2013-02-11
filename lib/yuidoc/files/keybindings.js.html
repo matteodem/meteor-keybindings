@@ -122,6 +122,21 @@
         };
 
         &#x2F;**
+         * A method to clean up values for the bindingName
+         * Nearly nothing to process until now
+         *
+         * @method unfancy
+         *
+         * @param value {String} String which should be processed
+         * @return {String} The unfancied String
+         *&#x2F;
+
+        Keybindings.prototype.unfancy = function (value) {
+            &#x2F;&#x2F; Remove unsupported values
+            return value.replace(&#x2F;[\+]+&#x2F;g, &#x27;&#x27;);
+        };
+
+        &#x2F;**
          * Adds a new binding to a key event
          *
          * @method addOne
@@ -144,12 +159,12 @@
              *&#x2F;
             var keyEvent = &#x27;string&#x27; !== typeof event ? &#x27;keydown&#x27; : event,
                 keyContext = &#x27;string&#x27; !== typeof context ? this._body : $(context),
-                bindName = keyEvent + &#x27;.&#x27; + key.replace(&#x2F;[\W]+&#x2F;g, &#x27;&#x27;),
+                bindName = this.unfancy(keyEvent + &#x27;.&#x27; + key),
                 contextString = this._body === keyContext ? &#x27;body&#x27; : context,
                 bindingKey = keyEvent + &#x27;&#x2F;&#x27; + key + &#x27;&#x2F;&#x27; + contextString;
 
             if (&#x27;string&#x27; === typeof key  &amp;&amp; &#x27;function&#x27; === typeof binding) {
-                &#x2F;&#x2F; Bind to body or defined context because otherwise it&#x27;s global &#x2F; not removable
+                &#x2F;&#x2F; process &#x2F; unfancy() the binding name (for fancy keybinding)
                 $(keyContext).bind(bindName, jwerty.event(key, binding));
                 this._bindings[bindingKey] = {
                     key: key,
@@ -224,7 +239,7 @@
             var returnValue = false,
                 keyEvent = &#x27;string&#x27; !== typeof event ? &#x27;keydown&#x27; : event,
                 keyContext = &#x27;string&#x27; !== typeof context ? this._body : $(context),
-                bindName = keyEvent + &#x27;.&#x27; + key.replace(&#x2F;[\W]+&#x2F;g, &#x27;&#x27;),
+                bindName = this.unfancy(keyEvent + &#x27;.&#x27; + key),
                 contextString = this._body === keyContext ? &#x27;body&#x27; : context,
                 bindingKey = keyEvent + &#x27;&#x2F;&#x27; + key + &#x27;&#x2F;&#x27; +    contextString;
 
@@ -262,7 +277,7 @@
          *&#x2F;
         Keybindings.prototype.removeAll = function () {
             var thisObj = this;
-            _.each(this._bindings, function (obj, key) {
+            _.each(this._bindings, function (obj) {
                 thisObj.removeOne(obj.key, obj.context, obj.event);
             });
         };

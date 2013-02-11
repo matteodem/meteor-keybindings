@@ -10,8 +10,9 @@ How to install
 mrt add keybindings
 ```
 
-You can easily bind keys with **Meteor.Keybindings**
-
+Overview
+--------
+You can easily `add`, `remove` and `replace` keys with **Meteor.Keybindings**
 
 ```
 Meteor.Keybindings.addOne('a', function() { 
@@ -23,10 +24,25 @@ Meteor.Keybindings.add({
 	'alt+b' : function () { console.log('alt+b'); },
 	'alt+c' : function () { console.log('alt+c'); }
 });
+
+Meteor.Keybindings.remove(['alt+a', 'alt+b']);
+
+Meteor.Keybindings.replace('a', function() {
+	console.log('You pressed the new a');
+});
 ```
+
+The keys are bound to the body and the event is keydown if the values are not defined.
+
+```
+Meteor.Keybindings.addOne(key, function, context, event);
+Meteor.Keybindings.removeOne(key, context, event);
+```
+
+
 For more information on how you can specificy the keys, check the [jwerty README](https://github.com/keithamus/jwerty/blob/master/README-DETAILED.md).
 
-####This is an early build (a lot of stuff not tested)! 
+####This is an early build (some stuff not tested)! 
 
-Have a look at the Qunit tests and yuidocs, if you want to see more examples. This readme will be updated soon.
+There are Qunit tests and yuidoc available for more informations.
 

@@ -49,6 +49,25 @@
         {
             "file": "keybindings.js",
             "line": 36,
+            "description": "A method to clean up values for the bindingName\nNearly nothing to process until now",
+            "itemtype": "method",
+            "name": "unfancy",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "String which should be processed",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The unfancied String",
+                "type": "String"
+            },
+            "class": "Keybindings"
+        },
+        {
+            "file": "keybindings.js",
+            "line": 51,
             "description": "Adds a new binding to a key event",
             "itemtype": "method",
             "name": "addOne",
@@ -78,7 +97,7 @@
         },
         {
             "file": "keybindings.js",
-            "line": 76,
+            "line": 91,
             "description": "Add multiple new bindings with one method",
             "itemtype": "method",
             "name": "add",
@@ -103,7 +122,7 @@
         },
         {
             "file": "keybindings.js",
-            "line": 93,
+            "line": 108,
             "description": "Check if the keys are binded to the document\nor if context and event given, for that",
             "itemtype": "method",
             "name": "isBinded",
@@ -132,7 +151,7 @@
         },
         {
             "file": "keybindings.js",
-            "line": 125,
+            "line": 140,
             "description": "Removes a binding to a key",
             "itemtype": "method",
             "name": "removeOne",
@@ -161,7 +180,7 @@
         },
         {
             "file": "keybindings.js",
-            "line": 152,
+            "line": 167,
             "description": "Same like addOne / add, remove multiple bindings at once",
             "itemtype": "method",
             "name": "remove",
@@ -186,7 +205,7 @@
         },
         {
             "file": "keybindings.js",
-            "line": 170,
+            "line": 185,
             "description": "And to make removing all easier, a method for that",
             "itemtype": "method",
             "name": "removeAll",
@@ -194,7 +213,7 @@
         },
         {
             "file": "keybindings.js",
-            "line": 183,
+            "line": 198,
             "description": "Replaces current binding with new binding,\nkeeps the context and event the same",
             "itemtype": "method",
             "name": "replace",
