@@ -127,4 +127,30 @@ var Meteor = {};
                 && 'keydown' === Meteor.Keybindings._bindings['keydown/alt+a/body'].event,
             'The properties of the 5 bindings are right');
     });
+
+    test("Functionality of fancy keybindings (⌃ + ⇧ + P)", 5, function () {
+        Meteor.Keybindings.add({
+            '⌃+⇧+P': function () {
+                console.log("I am ⌃ + ⇧ + P");
+            },
+            '⌘+⇧+P': function () {
+                console.log("I am  ⌘ + ⇧ + P");
+            },
+            '↑/↓': function () {
+                console.log("I am an arrow key");
+            }
+        }, '#qunit', 'keyup');
+
+        equal(3, Object.size(Meteor.Keybindings._bindings), "Fancy keybindings are added");
+        ok(Meteor.Keybindings._bindings['keyup/⌃+⇧+P/#qunit'], 'First keybinding is there');
+        ok(Meteor.Keybindings._bindings['keyup/⌘+⇧+P/#qunit'], 'Second is there');
+        ok(Meteor.Keybindings._bindings['keyup/↑/↓/#qunit'], 'Third also');
+        
+        Meteor.Keybindings.remove([
+            '⌃+⇧+P',
+            '⌘+⇧+P'
+        ], '#qunit', 'keyup');
+        
+        equal(1, Object.size(Meteor.Keybindings._bindings), "Removed 2 fancy keybindings");
+    });
 }());
