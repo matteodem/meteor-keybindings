@@ -8,7 +8,7 @@ Package.on_use(function (api) {
 
     api.add_files([
         'lib/jwerty.min.js',
-        'lib/keybindings.min.js'
+        'lib/keybindings.js'
     ], 'client'
     );
 });
