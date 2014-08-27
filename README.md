@@ -6,7 +6,7 @@ A meteor package for awesome key handling / bindings, with some methods to make 
 How to install
 --------------
 
-```
+```shell
 mrt add keybindings
 ```
 
@@ -14,7 +14,7 @@ Overview
 --------
 You can easily `add`, `remove` and `replace` keys with **Meteor.Keybindings**
 
-```
+```javascript
 Meteor.Keybindings.addOne('a', function() { 
 	console.log('You pressed a');
 });
@@ -34,7 +34,7 @@ Meteor.Keybindings.replace('a', function() {
 
 The keys are bound to the body and the event is keydown if the values are not defined.
 
-```
+```javascript
 Meteor.Keybindings.addOne(key, function, context, event);
 Meteor.Keybindings.removeOne(key, context, event);
 ```
